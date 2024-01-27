@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuiteWithGroups" >
+
+ <listeners>
+        <listener class-name="utils.Listner2"/> <!-- packagename.RetryListener-->
+    </listeners>
+    <test name="GroupTests">
+        <groups>
+            <run>
+                <include name="Sanity"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="test.UrlOpenRetryListner"/>
+          
+        </classes>
+    </test>
+</suite>

@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-TestSuiteWithGroups" class="navigator-link">
-              <span class="suite-name border-passed">TestSuiteWithGroups</span>
+              <span class="suite-name border-failed">TestSuiteWithGroups</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-TestSuiteWithGroups" class="navigator-link ">
-                    <span>D:\Users\AKSHAY\new-eclipse-workspace\TestAkshaySeleniumProject\testngGroups.xml</span>
+                    <span>D:\Users\AKSHAY\new-eclipse-workspace\TestAkshaySeleniumProject\testngRetryListner.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,40 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,  2 skipped,  1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-TestSuiteWithGroups" class="hide-methods failed suite-TestSuiteWithGroups"> (hide)</a> <!-- hide-methods failed suite-TestSuiteWithGroups -->
+                      <a href="#" panel-name="suite-TestSuiteWithGroups" class="show-methods failed suite-TestSuiteWithGroups"> (show)</a> <!-- show-methods failed suite-TestSuiteWithGroups -->
+                    </span>
+                    <div class="method-list-content failed suite-TestSuiteWithGroups">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-TestSuiteWithGroups" title="test.UrlOpenRetryListner" class="method navigator-link" hash-for-method="checkTitle">checkTitle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-TestSuiteWithGroups -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Retried methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-TestSuiteWithGroups" class="hide-methods skipped suite-TestSuiteWithGroups"> (hide)</a> <!-- hide-methods skipped suite-TestSuiteWithGroups -->
+                      <a href="#" panel-name="suite-TestSuiteWithGroups" class="show-methods skipped suite-TestSuiteWithGroups"> (show)</a> <!-- show-methods skipped suite-TestSuiteWithGroups -->
+                    </span>
+                    <div class="method-list-content skipped suite-TestSuiteWithGroups">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-TestSuiteWithGroups" title="test.UrlOpenRetryListner" class="method navigator-link" hash-for-method="checkTitle">checkTitle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-TestSuiteWithGroups" title="test.UrlOpenRetryListner" class="method navigator-link" hash-for-method="checkTitle">checkTitle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-TestSuiteWithGroups -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,12 +137,7 @@
                     <div class="method-list-content passed suite-TestSuiteWithGroups">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestSuiteWithGroups" title="test.UrlOpenTestSuiteWithGroups" class="method navigator-link" hash-for-method="checkTitle">checkTitle</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-TestSuiteWithGroups" title="test.UrlOpenTestSuiteWithGroups" class="method navigator-link" hash-for-method="testTestNG">testTestNG</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-TestSuiteWithGroups" title="test.UrlOpenRetryListner" class="method navigator-link" hash-for-method="testTestNG">testTestNG</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-TestSuiteWithGroups -->
@@ -124,10 +152,10 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-TestSuiteWithGroups" class="panel TestSuiteWithGroups">
-          <div class="suite-TestSuiteWithGroups-class-passed">
+          <div class="suite-TestSuiteWithGroups-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">test.UrlOpenTestSuiteWithGroups</span>
+              <img src="failed.png"/>
+              <span class="class-name">test.UrlOpenRetryListner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -135,8 +163,98 @@
                   <a name="checkTitle">
                   </a> <!-- checkTitle -->
                   <span class="method-name">checkTitle</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: net::ERR_SSL_PROTOCOL_ERROR
+  (Session info: chrome=120.0.6099.227)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5e26bd6db48c498cfcab47ba658ef5e3, get {url=https://qa-.netlify.app/bugs-form.html}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.227, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\AKSHAY\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56049}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56049/devtoo..., se:cdpVersion: 120.0.6099.227, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5e26bd6db48c498cfcab47ba658ef5e3
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:300)
+	at test.UrlOpenRetryListner.checkTitle(UrlOpenRetryListner.java:51)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestSuiteWithGroups-class-failed -->
+          <div class="suite-TestSuiteWithGroups-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">test.UrlOpenRetryListner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkTitle">
+                  </a> <!-- checkTitle -->
+                  <span class="method-name">checkTitle</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: net::ERR_SSL_PROTOCOL_ERROR
+  (Session info: chrome=120.0.6099.227)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [24271a874bec125a01b78e0486e75334, get {url=https://qa-.netlify.app/bugs-form.html}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.227, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\AKSHAY\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55997}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55997/devtoo..., se:cdpVersion: 120.0.6099.227, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 24271a874bec125a01b78e0486e75334
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:300)
+	at test.UrlOpenRetryListner.checkTitle(UrlOpenRetryListner.java:51)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkTitle">
+                  </a> <!-- checkTitle -->
+                  <span class="method-name">checkTitle</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: net::ERR_SSL_PROTOCOL_ERROR
+  (Session info: chrome=120.0.6099.227)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [88dedbfdfe8ae767e157e4b8cb4f2cbc, get {url=https://qa-.netlify.app/bugs-form.html}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.227, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\AKSHAY\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56023}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56023/devtoo..., se:cdpVersion: 120.0.6099.227, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 88dedbfdfe8ae767e157e4b8cb4f2cbc
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:300)
+	at test.UrlOpenRetryListner.checkTitle(UrlOpenRetryListner.java:51)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestSuiteWithGroups-class-skipped -->
+          <div class="suite-TestSuiteWithGroups-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.UrlOpenRetryListner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="testTestNG">
@@ -149,21 +267,24 @@
         </div> <!-- panel TestSuiteWithGroups -->
         <div panel-name="test-xml-TestSuiteWithGroups" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\Users\AKSHAY\new-eclipse-workspace\TestAkshaySeleniumProject\testngGroups.xml</span>
+            <span class="header-content">D:\Users\AKSHAY\new-eclipse-workspace\TestAkshaySeleniumProject\testngRetryListner.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite parallel=&quot;tests&quot; name=&quot;TestSuiteWithGroups&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;GroupTests&quot;&gt;
+&lt;suite name=&quot;TestSuiteWithGroups&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;utils.RetryListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;GroupTests&quot;&gt;
     &lt;groups&gt;
       &lt;run&gt;
         &lt;include name=&quot;Sanity&quot;/&gt;
       &lt;/run&gt;
     &lt;/groups&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;test.UrlOpenTestSuiteWithGroups&quot;/&gt;
+      &lt;class name=&quot;test.UrlOpenRetryListner&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- GroupTests --&gt;
 &lt;/suite&gt; &lt;!-- TestSuiteWithGroups --&gt;
@@ -215,20 +336,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'checkTitle')
-data.setCell(0, 2, 'test.UrlOpenTestSuiteWithGroups')
-data.setCell(0, 3, 6937);
+data.setCell(0, 2, 'test.UrlOpenRetryListner')
+data.setCell(0, 3, 939);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testTestNG')
-data.setCell(1, 2, 'test.UrlOpenTestSuiteWithGroups')
-data.setCell(1, 3, 0);
+data.setCell(1, 1, 'checkTitle')
+data.setCell(1, 2, 'test.UrlOpenRetryListner')
+data.setCell(1, 3, 902);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'checkTitle')
+data.setCell(2, 2, 'test.UrlOpenRetryListner')
+data.setCell(2, 3, 872);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testTestNG')
+data.setCell(3, 2, 'test.UrlOpenRetryListner')
+data.setCell(3, 3, 1);
 window.suiteTableData['TestSuiteWithGroups']= { tableData: data, tableDiv: 'times-div-TestSuiteWithGroups'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-TestSuiteWithGroups">
               </div> <!-- times-div-TestSuiteWithGroups -->
             </div> <!-- times-div -->
@@ -247,7 +376,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">test.UrlOpenTestSuiteWithGroups</span>
+              <span class="ignored-class-name">test.UrlOpenRetryListner</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">openUrlTest</span>
                 <br/>
@@ -261,30 +390,56 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">test.UrlOpenTestSuiteWithGroups</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">test.UrlOpenRetryListner</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkTitle</span>
-                <span class="method-start">2282 ms</span>
+                <span class="method-start">2873 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">9229 ms</span>
+                <span class="method-start">3817 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">9377 ms</span>
+                <span class="method-start">3960 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">testTestNG</span>
-                <span class="method-start">10608 ms</span>
+                <span class="method-name">checkTitle</span>
+                <span class="method-start">5280 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">10611 ms</span>
+                <span class="method-start">6185 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">6323 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">checkTitle</span>
+                <span class="method-start">7638 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">8512 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">8692 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testTestNG</span>
+                <span class="method-start">9968 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">9970 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
