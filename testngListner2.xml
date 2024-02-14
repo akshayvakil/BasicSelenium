@@ -2,7 +2,7 @@
 <suite name="TestSuiteWithGroups" >
 
  <listeners>
-        <listener class-name="utils.Listner2"/> <!-- packagename.RetryListener-->
+        <listener class-name="utils.Listner2"/> <!-- "packagename".RetryListener-->
     </listeners>
     <test name="GroupTests">
         <groups>
